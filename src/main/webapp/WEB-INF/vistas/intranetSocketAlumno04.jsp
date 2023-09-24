@@ -25,7 +25,7 @@
 </head>
 <body>
 <jsp:include page="intranetCabecera.jsp" />
-<div class="container" style="margin-top: 4%"><h4>Socket Alumno 04</h4></div>
+<div class="container" style="margin-top: 4%"><h4>Socket 04 - Libro  XLSX y JSON</h4></div>
 
 <div class="container" style="margin-top: 1%">
 <!-- Agregar aquí -->

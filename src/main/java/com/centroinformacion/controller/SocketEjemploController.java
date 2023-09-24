@@ -48,6 +48,14 @@ public class SocketEjemploController {
 		log.info(">>> [ini] socketClientStart ");
 		HashMap<String, String> map = new HashMap<String, String>();
 		
+		File fileRutaCliente = new File(AppSettings.FILE_CLIENT);
+		File fileRutaServer = new File(AppSettings.FILE_SERVER);
+		try {
+			if (!fileRutaCliente.exists()) fileRutaCliente.mkdirs();
+			if (!fileRutaServer.exists()) fileRutaServer.mkdirs();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		try {
 			//1 Se genera el archivo pais json
 			List<Pais> lstPais = paisService.listaTodos();
@@ -79,6 +87,7 @@ public class SocketEjemploController {
 
 			
 			// 3 Se envía de los paquetes de bytes del archivo
+			
 			File file = new File(FILE_PAIS_JSON);
 			FileInputStream fis = new FileInputStream(file);
 			DataOutputStream salida = new DataOutputStream(cliente.getOutputStream());
